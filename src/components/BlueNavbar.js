@@ -8,7 +8,7 @@ function BlueNavbar(props) {
         <p>
           Due to the COVID 19 epidemic, orders may be processed with a slight
           delay
-          <span className={cn(" text-white float-right pr-5")}>A</span>
+          <span className={cn(" text-white text-yellow-500 float-right pr-5")}>A</span>
         </p>
       </div>
     </div>
