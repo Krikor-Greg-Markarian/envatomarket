@@ -3,7 +3,7 @@ import cn from "classnames";
 
 function BestDeals(props) {
   return (
-    <div className={cn("border-r-2 w-7/12 p-5")}>
+    <div className={cn("border-r-2 p-5")}>
       <div className={cn("products relative")}>
         <div className={cn("absolute left-1")}>
           <div className={cn("bg-blue-900 rounded-full w-14 h-14")}>
@@ -22,7 +22,7 @@ function BestDeals(props) {
           {props.oldPrice}
         </p>
       </div>
-      <hr className={cn("w-1/12 pt-2")}></hr>
+      <hr className={cn("w-3/12 pt-2")}></hr>
       <div className={cn("flex")}>
         <div className={cn("flex-shrink")}>
           <p className={cn("text-blue-900")}>{props.pcsAvailable}</p>
