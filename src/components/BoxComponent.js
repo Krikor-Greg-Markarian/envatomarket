@@ -28,7 +28,7 @@ function BoxComponent(props) {
            buttonName={props.moreButton}
         />) : null}
 
-        {props.isDiscounted ? ( <p className= {cn("text-yellow-500 text-2xl pl-4 pt-2")}>-30%</p> ) : null}
+        {props.isDiscounted ? ( <p className= {cn("text-yellow-500 text-2xl pl-4 pt-2")}>{props.discount}-30%</p> ) : null}
        
             
 
