@@ -20,6 +20,7 @@ import BestDeals from "../src/components/BestDeals";
 import GetRidOfBecteria from "../src/components/GetRidOfBecteria";
 import LatestReviews from "../src/components/LatestReviews";
 import React, { useState } from "react";
+import MoneyBack from "../src/components/MoneyBack";
 
 export default function Home({
   boxComponents,
@@ -52,7 +53,7 @@ export default function Home({
       {/* here is the section were antibacterial media masks are marketed */}
       <section className={cn("flex justify-center items-center")}>
         <div className={cn("grid grid-cols-2")}>
-          <div className={cn("col-span-1 w-8/12")}>
+          <div className={cn("col-span-1")}>
             <p className={cn("text-blue-900 text-5xl font-bold")}>
               Antibacterial Media Mask
             </p>
@@ -90,13 +91,13 @@ export default function Home({
                 <div className={cn("col-span-1")}>
                   <BoxComponent
                     imageUrl={item.imageUrl}
-                    description={item.description}
-                    newButton={item.newButton}
-                    moreButton={item.moreButton}
                     isNew={item.isNew}
                     isMore={item.isMore}
+                    newButton={item.newButton}
+                    description={item.description}
+                    moreButton={item.moreButton}
                     isDiscounted={item.isDiscounted}
-                    oldPrice={item.oldPrice}
+                    discount={item.discount}
                   />
                 </div>
               ))}
@@ -450,8 +451,79 @@ export default function Home({
                 )}
               </div>
             </div>
+            <div className={cn("col-span-1")}>
+              <div
+                onMouseEnter={() => setIsShown(true)}
+                onMouseLeave={() => setIsShown(false)}
+                className={cn(
+                  "instagram4 rounded cursor-pointer transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+                )}
+              >
+                {isShown && (
+                  <div className={cn("bg-blue-700 opacity-50 w-full h-full ")}>
+                    <div className={cn("flex justify-center items-center")}>
+                      <FaInstagram
+                        className={cn("text-white text-2xl mt-20")}
+                      />
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+            <div className={cn("col-span-1")}>
+              <div
+                onMouseEnter={() => setIsShown(true)}
+                onMouseLeave={() => setIsShown(false)}
+                className={cn(
+                  "instagram4 rounded cursor-pointer transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+                )}
+              >
+                {isShown && (
+                  <div className={cn("bg-blue-700 opacity-50 w-full h-full ")}>
+                    <div className={cn("flex justify-center items-center")}>
+                      <FaInstagram
+                        className={cn("text-white text-2xl mt-20")}
+                      />
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
         </div>
+      </section>
+
+      {/* Join our newsletter and get
+$20 discount for your first order */}
+
+      <section>
+        <p className={cn("text-4xl font-bold text-blue-900 text-center")}>
+          Join our newsletter and get <br></br> $20 discount for your first
+          order
+        </p>
+        <div className={cn("container mx-auto pt-6")}>
+          <div className={cn("flex justify-center items-center")}>
+            <input
+              placeholder="Enter your email address"
+              className={cn("p-3 rounded-full px-20")}
+              type="text"
+              name=""
+              id=""
+            />
+            <Button
+              className={cn(
+                "text-center text-white p-3 border-2 border-yellow-500 hover:bg-white px-8 rounded-full font-bold ml-4 bg-yellow-500 hover:text-yellow-500"
+              )}
+              buttonName={"Subscribe"}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Money back section and more */}
+
+      <section>
+        <MoneyBack />
       </section>
     </div>
   );
