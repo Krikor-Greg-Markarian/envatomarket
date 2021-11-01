@@ -13,25 +13,30 @@ function BoxComponent(props) {
           backgroundImage: `url(${props.imageUrl})`,
         }}
       >
-          {props.isNew ? (<Button
-          className={cn("bg-green-400 text-sm text-white rounded-full px-4")}
-          buttonName={props.newButton}
-        />) : null}
-        
+        {props.isNew ? (
+          <Button
+            className={cn("bg-green-400 text-sm text-white rounded-full px-4")}
+            buttonName={props.newButton}
+          />
+        ) : null}
+
         <p className={cn("text-blue-900 text-2xl font-bold pt-4 pb-9 w-5/12")}>
           {props.description}
         </p>
-{props.isMore ? ( <Button
-          className={cn(
-            "bg-blue-900 text-white px-6 rounded-full py-1 text-center "
-          )}
-           buttonName={props.moreButton}
-        />) : null}
+        {props.isMore ? (
+          <Button
+            className={cn(
+              "bg-blue-900 text-white px-6 rounded-full py-1 text-center "
+            )}
+            buttonName={props.moreButton}
+          />
+        ) : null}
 
-        {props.isDiscounted ? ( <p className= {cn("text-yellow-500 text-2xl pl-4 pt-2")}>{props.discount}-30%</p> ) : null}
-       
-            
-
+        {props.isDiscounted ? (
+          <p className={cn("text-yellow-500 text-5xl font-bold pl-4")}>
+            {props.discount}
+          </p>
+        ) : null}
       </div>
     </div>
   );
