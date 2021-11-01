@@ -7,9 +7,9 @@ function MostPopularCategories(props) {
     <div className={cn("bg-gray-200 p-5")}>
       <div
         style={{
-          width: "250px",
-          height: "270px",
-          backgroundImage: `url(${props.imageUrl})`,
+          width: "230px",
+          height: "260px",
+          // backgroundImage: `url(${props.imageUrl})`,
         }}
       >
         <p className={cn("text-blue-900 text-xl font-bold pt-3")}>
