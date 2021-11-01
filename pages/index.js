@@ -86,7 +86,7 @@ export default function Home({
       <section>
         <div className={cn("container mx-auto")}>
           <div className={cn("flex justify-center items-center")}>
-            <div className={cn("grid grid-cols-3")}>
+            <div className={cn("grid grid-cols-3 gap-8")}>
               {boxComponents.map((item, idx) => (
                 <div className={cn("col-span-1")}>
                   <BoxComponent
@@ -116,7 +116,7 @@ export default function Home({
             Check out the most popular categories
           </p>
           <div className={cn("flex justify-center items-center")}>
-            <div className={cn("grid grid-cols-5")}>
+            <div className={cn("grid grid-cols-5 gap-2")}>
               {mostPopularCategories.map((item, idx) => (
                 <div className={cn("col-span-1")}>
                   <MostPopularCategories
@@ -132,18 +132,22 @@ export default function Home({
       </section>
       {/* here are the products section */}
       <section>
-        <div className={cn("container mx-auto")}>
+        <div className={cn("container mx-auto pt-14 pb-8")}>
           <Products />
         </div>
       </section>
       {/* latest products part */}
       <section>
         <div className={cn("container mx-auto")}>
-          <p className={cn("text-4xl font-bold text-blue-900 text-center")}>
+          <p
+            className={cn(
+              "text-4xl font-bold text-blue-900 pt-12 pb-8 text-center"
+            )}
+          >
             Latest products
           </p>
           <div className={cn("flex justify-center items-center")}>
-            <div className={cn("grid grid-cols-3")}>
+            <div className={cn("grid grid-cols-4")}>
               {latestProduct.map((item, idx) => (
                 <div className={cn("col-span-1")}>
                   <LatestProducts
@@ -165,7 +169,7 @@ export default function Home({
         </div>
       </section>
       {/* 100% secure delivery section */}
-      <section>
+      <section className={cn("pt-24 pb-24")}>
         <div className={cn("container mx-auto")}>
           <div className={cn("bg-green-100 p-8")}>
             <div className={cn("grid grid-cols-4")}>
@@ -199,16 +203,18 @@ export default function Home({
         </div>
       </section>
       {/* Best deals of the week section */}
-      <section>
+      <section className={cn("pb-24")}>
         <div className={cn("container mx-auto")}>
-          <p className={cn("text-4xl font-bold text-blue-900 text-center")}>
+          <p
+            className={cn("text-4xl font-bold text-blue-900 pb-10 text-center")}
+          >
             Best Deals of the week!
           </p>
           <div className={cn("container mx-auto")}>
             <div className={cn("border-2 border-yellow-500 bg-white")}>
-              <div className={cn("grid grid-cols-4")}>
-                <div className={cn("col-span-1")}>
-                  {bestDealsOfTheWeek.map((item, idx) => (
+              <div className={cn("grid grid-cols-5")}>
+                {bestDealsOfTheWeek.map((item, idx) => (
+                  <div className={cn("col-span-1")}>
                     <BestDeals
                       imageUrl={item.imageUrl}
                       title={item.title}
@@ -218,20 +224,20 @@ export default function Home({
                       pcsAvailable={item.pcsAvailable}
                       number={item.number}
                     />
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
       {/* top 5 bestseller section */}
-      <section>
+      <section className={cn("pb-24")}>
         <div className={cn("container mx-auto")}>
           <p className={cn("text-4xl font-bold text-blue-900 text-center")}>
             Top 5 Bestsellers in:
           </p>
-          <div className={cn("flex justify-center items-center pt-3")}>
+          <div className={cn("flex justify-center pb-6 items-center pt-3")}>
             <p
               className={cn("text-blue-900 inline text-xl underline font-bold")}
             >
@@ -253,7 +259,7 @@ export default function Home({
             </p>
           </div>
           <div className={cn("flex justify-center items-center")}>
-            <div className={cn("grid grid-cols-3")}>
+            <div className={cn("grid grid-cols-5")}>
               {latestProduct.map((item, idx) => (
                 <div className={cn("col-span-1")}>
                   <LatestProducts
@@ -298,11 +304,15 @@ export default function Home({
       </section>
       {/* Featured products section */}
       <section>
-        <p className={cn("text-4xl font-bold text-blue-900 text-center")}>
+        <p
+          className={cn(
+            "text-4xl font-bold pt-20 pb-6 text-blue-900 text-center"
+          )}
+        >
           Featured products
         </p>
         <div className={cn("flex justify-center items-center")}>
-          <div className={cn("grid grid-cols-3")}>
+          <div className={cn("grid grid-cols-5")}>
             {latestProduct.map((item, idx) => (
               <div className={cn("col-span-1")}>
                 <LatestProducts
@@ -343,14 +353,14 @@ export default function Home({
           </div>
           <div className={cn("container mx-auto")}>
             <div className={cn("grid grid-cols-4 gap-8")}>
-              <div className={cn("col-span-1")}>
-                {latestReviews.map((item, idx) => (
+              {latestReviews.map((item, idx) => (
+                <div className={cn("col-span-1")}>
                   <LatestReviews
                     description={item.description}
                     name={item.name}
                   />
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -359,7 +369,7 @@ export default function Home({
       {/* follow on instagram section */}
 
       <section>
-        <p className={cn("text-blue-900 text-lg font-bold text-center pl-4")}>
+        <p className={cn("text-blue-900 pt-8 pb-8 text-lg font-bold text-center pl-4")}>
           Follow <span className={cn("text-2xl font-bold")}> @MYMEDI </span> on
           instagram
         </p>
@@ -497,7 +507,7 @@ export default function Home({
 $20 discount for your first order */}
 
       <section>
-        <p className={cn("text-4xl font-bold text-blue-900 text-center")}>
+        <p className={cn("text-4xl pt-20 font-bold text-blue-900 text-center")}>
           Join our newsletter and get <br></br> $20 discount for your first
           order
         </p>
