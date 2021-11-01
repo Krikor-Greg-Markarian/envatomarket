@@ -7,7 +7,6 @@ import LastNavbar from "../src/components/LastNavbar";
 import {
   Fa500Px,
   FaAccessibleIcon,
-  FaAccusoft,
   FaInstagram,
 } from "react-icons/fa";
 import BoxComponent from "../src/components/BoxComponent";
@@ -369,7 +368,11 @@ export default function Home({
       {/* follow on instagram section */}
 
       <section>
-        <p className={cn("text-blue-900 pt-8 pb-8 text-lg font-bold text-center pl-4")}>
+        <p
+          className={cn(
+            "text-blue-900 pt-8 pb-8 text-lg font-bold text-center pl-4"
+          )}
+        >
           Follow <span className={cn("text-2xl font-bold")}> @MYMEDI </span> on
           instagram
         </p>
