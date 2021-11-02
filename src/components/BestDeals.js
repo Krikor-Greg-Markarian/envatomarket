@@ -12,6 +12,7 @@ function BestDeals(props) {
             </div>
           </div>
         </div>
+        <img src={props.imageUrl} alt="" />
       </div>
       <p className={"text-blue-900"}>{props.title}</p>
       <div className={cn("pt-2 pb-2")}>
@@ -25,7 +26,7 @@ function BestDeals(props) {
       <hr className={cn("w-3/12 pt-2")}></hr>
       <div className={cn("flex")}>
         <div className={cn("flex-shrink")}>
-          <p className={cn("text-blue-900")}>{props.pcsAvailable}</p>
+          <p className={cn("text-blue-900 w-7/12")}>{props.pcsAvailable}</p>
         </div>
         <div className={cn("flex-shrink")}>
           <p className={cn("text-2xl font-bold pt-2 pr-20")}>{props.number}</p>
