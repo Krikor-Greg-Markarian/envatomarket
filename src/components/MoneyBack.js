@@ -1,28 +1,47 @@
 import React from "react";
+import { FaWallet, FaDribbble, FaFirstOrder } from "react-icons/fa";
 import cn from "classnames";
-import { FaWallet } from "react-icons/fa";
 
 function MoneyBack(props) {
   return (
-    <div
-      className={cn(
-        "bg-gray-200 flex justify-center items-center w-3/12 p-1 text-blue-900 font-bold"
-      )}
-    >
-      <div className={cn("flex")}>
-        <div className={cn("flex-shrink")}>
-          <FaWallet className={cn("inline")} />
-        </div>
-        <div className={cn("flex-shrink inline pl-1")}>
+    <div className={cn("bg-gray-200 px-28 py-2 border-r-2 border-gray-300")}>
+      {props.isWallet ? (
+        <div>
+          <FaWallet className={cn("text-blue-900 inline")} />
           <p
             className={cn(
-              "text-blue-900 hover:text-yellow-500   cursor-pointer transition duration-500 ease-in-out"
+              "text-blue-900 pl-2 inline font-bold hover:text-yellow-500 cursor-pointer transition duration-500 ease-in-out"
             )}
           >
-            100% Money back
+            {props.title}
           </p>
         </div>
-      </div>
+      ) : null}
+
+      {props.isPackage ? (
+        <div>
+          <FaDribbble className={cn("text-blue-900 inline")} />
+          <p
+            className={cn(
+              "text-blue-900 pl-2 inline font-bold hover:text-yellow-500 cursor-pointer transition duration-500 ease-in-out"
+            )}
+          >
+            {props.title}
+          </p>
+        </div>
+      ) : null}
+      {props.isDelivery ? (
+        <div>
+          <FaFirstOrder className={cn("text-blue-900 inline")} />
+          <p
+            className={cn(
+              "text-blue-900 pl-2 inline font-bold hover:text-yellow-500 cursor-pointer transition duration-500 ease-in-out"
+            )}
+          >
+            {props.title}
+          </p>
+        </div>
+      ) : null}
     </div>
   );
 }
